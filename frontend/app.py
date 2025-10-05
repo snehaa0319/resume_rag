@@ -1,8 +1,9 @@
 import streamlit as st
 import requests
+import os
 
 # Backend URL
-BACKEND_URL = "http://localhost:8000"
+BACKEND_URL = os.getenv("BACKEND_URL")
 
 st.set_page_config(page_title="ResumeRAG Demo", layout="wide")
 st.title("ResumeRAG — Resumé Search & Job Match (Demo)")
