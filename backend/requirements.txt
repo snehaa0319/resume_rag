@@ -4,3 +4,6 @@ openai
 python-dotenv
 faiss-cpu
 pydantic
+numpy
+PyPDF2
+python-docx

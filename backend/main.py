@@ -6,6 +6,7 @@ import openai
 import faiss
 import numpy as np
 from io import BytesIO
+import uvicorn
 
 # Load OpenAI API key
 load_dotenv()
@@ -83,3 +84,6 @@ async def query_job(job_description: str = Form(...), top_k: int = Form(3)):
             "snippet": res["text"][:500] + ("..." if len(res["text"]) > 500 else "")
         })
     return {"results": results}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
